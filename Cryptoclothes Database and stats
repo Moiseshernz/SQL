@@ -1,0 +1,33 @@
+--Create a T-Shirt store database
+
+CREATE TABLE Cryptoclothes (id INTEGER PRIMARY KEY, shirt_name TEXT, Production_cost INTEGER, Shipping_cost$ INTEGER, Total_cost$ INTEGER, Retail_price INTEGER, Net_profit_margin TEXT);
+    
+    INSERT INTO Cryptoclothes VALUES (1, "BTC_minimalist", 8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (2, "ETH_minimalist", 8.95, 3.99, 14.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (9, "Cardano",8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (10, "Polkadot", 8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (11, "Luna", 8.95, 3.99, 12.94, 19.99, "35.27%")
+    INSERT INTO Cryptoclothes VALUES (12, "BNB", 8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (13, "AXI", 8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (14, "QBIT", 8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (15, "NFT",8.95, 3.99, 12.94, 19.99, "35.27%");
+    INSERT INTO Cryptoclothes VALUES (3, "BTC_back", 10.95, 3.99, 14.94, 24.99, "40.22%");
+    INSERT INTO Cryptoclothes VALUES (4, "ETH_back", 10.95, 3.99, 14.94, 24.99, "40.22%");
+    INSERT INTO Cryptoclothes VALUES (5, "I_feel_bullish", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (6, "I_feel_bearish", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (7, "to_the_moon", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (8, "Crypto_millionare", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (16, "NFT_Millionare", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (17, "I-investor", 12.28, 3.99, 12.94, 29.99, "45.75%");
+    INSERT INTO Cryptoclothes VALUES (18, "We_the_future", 12.28, 3.99, 12.94, 29.99, "45.75%");
+
+   --display the database ordered by price.    
+    SELECT * FROM Cryptoclothes
+    ORDER BY Net_profit_margin desc;
+    
+    --display the database ordered by retail price
+    SELECT Retail_price, shirt_name FROM Cryptoclothes WHERE Retail_price > 5 ORDER BY Retail_price;
+    
+    --display the total price in each category of price
+    SELECT Retail_price, SUM(Retail_price) FROM Cryptoclothes GROUP BY Retail_price;
+
