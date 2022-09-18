@@ -1,0 +1,72 @@
+In this SQL code, I'm querying a database that's holding Pokemon data to answer different questions about that world. 
+
+--Number of non legendary pokemon among all the generations--
+
+SELECT COUNT(Legendary) AS num_of_non_legendary_pokes
+FROM pokemon
+WHERE Legendary = "False";
+
+--Min-Max-Avg Attack value among all pokemons--
+SELECT Name AS Highest_attack_pokemon, Generation, MAX(Attack) AS Attack, Legendary FROM pokemon;
+
+SELECT Name AS Lowest_attack_pokemon, Generation, MIN(Attack) AS Attack , Legendary FROM pokemon;
+
+SELECT AVG(Attack) AS avg_pokemon_attack FROM pokemon;
+
+--Min-Max-Avg Speed value among all pokemons--
+SELECT Name AS Highest_base_speed_pokemon, MAX(Speed) AS Speed, Legendary FROM pokemon;
+
+SELECT Name AS Lowest_base_speed, MIN(Speed) AS Speed, Legendary FROM pokemon;
+SELECT AVG(Speed) AS avg_pokemon_speed FROM pokemon;
+
+--Min-Max-Avg Defense value among all pokemons--
+SELECT Name  AS Highest_base_defense_pokemon, Generation, MAX(Defense) AS Defense, Legendary FROM pokemon;
+SELECT Name AS Lowest_defense_pokemon, Generation, MIN(Defense) AS Defense, Legendary FROM pokemon;
+SELECT AVG(Defense) AS avg_pokemon_defense FROM pokemon;
+
+--A table were you integrate all this data would be cool, specially if you separate between generation--
+
+--Min-Max-Avg HP value among all pokemons--
+SELECT Name AS Highest_base_HP_pokemon, Generation, MAX(HP) AS HP, Legendary FROM pokemon;
+
+SELECT Name AS Lowest_base_HP_pokemon, Generation, MIN(HP) AS HP, Legendary FROM pokemon;
+
+SELECT AVG(HP) AS avg_pokemon_HP FROM pokemon;
+
+--Min-Max-Avg Sp_Atk value among all pokemons--
+SELECT Name AS Highest_base_Sp_Atk, Generation, MAX(Sp_Atk) AS Sp_attk, Legendary FROM pokemon;
+
+SELECT Name AS Lowest_base_Sp_Atk, Generation, MIN(Sp_Atk) AS Sp_attk, Legendary FROM pokemon;
+
+SELECT AVG(Sp_Atk) AS avg_pokemon_Sp_Atk FROM pokemon;
+
+--Min-Max-Avg Sp_Def value among all pokemons--
+SELECT Name AS Highest_base_Sp_Def_pokemon, Generation,
+MAX(Sp_Def) AS Sp_Def , Legendary FROM pokemon;
+
+SELECT Name  AS Lowest_base_Sp_Def_pokemon, Generation, 
+MIN(Sp_Def) AS Sp_def, Legendary FROM pokemon;
+
+SELECT AVG(Sp_Def) AS avg_pokemon_Sp_Def FROM pokemon;
+
+--Min-Max-Avg Totalvalue among all pokemons--
+SELECT Name AS Highest_base_Total_pokemon, Generation,
+MAX(Total) AS Total , Legendary FROM pokemon;
+
+SELECT Name AS Lowest_base_Total_pokemon, Generation, 
+MIN(Total) AS Total, Legendary FROM pokemon;
+
+SELECT AVG(Total) AS avg_pokemon_Total FROM pokemon;
+
+--Avg Total for non legendary pokemons
+SELECT AVG(Total) AS non_legend_avg_total FROM pokemon
+WHERE Legendary = "False";
+
+SELECT AVG(Total) AS Legend_avg_Total FROM pokemon
+WHERE Legendary = "True";
+
+--List of pokemons above avg
+
+SELECT COUNT(Total) AS non_Legendary_Pokemons_Above_Total_Avg
+FROM pokemon
+WHERE Total > 435.1025 AND Legendary = "False";
