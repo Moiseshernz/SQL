@@ -1,4 +1,4 @@
---Create a T-Shirt store database
+--In this SQL code I'm creating a table and querying data for a brand new store
 
 CREATE TABLE Cryptoclothes (id INTEGER PRIMARY KEY, shirt_name TEXT, Production_cost INTEGER, Shipping_cost$ INTEGER, Total_cost$ INTEGER, Retail_price INTEGER, Net_profit_margin TEXT);
     
