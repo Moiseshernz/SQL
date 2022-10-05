@@ -1,3 +1,7 @@
+--For this project I queried data from a chinook dataset.
+--The data includes information on customers, employees and different types of digital media that have been sold there.
+--With my knowledge of SQL, I was able to answer several questions regarding sales from this digital media store.
+
 --Customers who are not in the US.
 SELECT customerID, firstName, lastName, country FROM chinook.customers
 WHERE country != 'USA'
