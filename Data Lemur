@@ -1,0 +1,17 @@
+--1 In this query I tasked with finding the candidates best suited for an open Data Science job.
+--I listed the candidates who possess all of the required skills for the job by ID in ascending order. 
+SELECT candidate_id 
+FROM candidates
+WHERE skill IN ('Python', 'Tableau', 'PostgreSQL')
+GROUP BY candidate_id
+HAVING COUNT(skill) = 3
+ORDER BY candidate_id
+;
+
+--2 In this query I returned the page IDs of all the Facebook pages that don't have any likes in the database.
+SELECT p.page_id 
+FROM page_likes pl
+FULL OUTER JOIN pages p ON p.page_id = pl.page_id
+WHERE liked_date IS NULL
+ORDER BY p.page_id ASC
+;
